@@ -28,7 +28,7 @@ export default function MyComponent({
     if (chatRef.current) {
       const chat = chatRef.current.value;
       if (!chat) return;
-      setChats((chats) => [...chats, { message: chat, votes: 0, chatId: "asd" }]);
+      setChats((chats) => [...chats ]);
       sendChat(chat);
       chatRef.current.value = "";
     }
@@ -40,7 +40,7 @@ export default function MyComponent({
         type: "UPVOTE_MESSAGE",
         payload: {
           userId: userId,
-          roomId: "2",
+          roomId: "1",
           chatId,
         },
       })
@@ -54,7 +54,7 @@ export default function MyComponent({
         payload: {
           message,
           userId: userId,
-          roomId: "2",
+          roomId: "1",
         },
       })
     );
@@ -69,9 +69,9 @@ export default function MyComponent({
         JSON.stringify({
           type: "JOIN_ROOM",
           payload: {
-            name: "harkirat",
+            name: "Shubham Wagh",
             userId,
-            roomId: "2",
+            roomId: "1",
           },
         })
       );
